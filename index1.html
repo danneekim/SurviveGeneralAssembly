@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+        margin: 0;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+    #container{
+        display: flex;
+        text-align: center; 
+        width: 80vw;
+
+        justify-content: center;
+        align-items: center;  
+        position: absolute;  
+        border: none;
+    }
+
+    .wall{
+        background-color:gray;
+    }
+
+    .token {
+        background-color: green;
+    }
+
+    .door{
+        background-color: orange;
+    }
+
+    div{
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;    
+        font-size: 8pt; 
+    }
+
+    </style>
+</head>
+<body>
+    <div id = "container">
+        <!-- Column 1 -->
+        <div> 
+            <div class=>0,0</div>
+            <div class=>0,1</div>
+            <div class=>0,2</div>
+            <div class=>0,3</div>
+            <div class=>0,4</div>
+            <div class=>0,5</div>
+            <div class=>0,6</div>
+            <div class=>0,7</div>
+            <div class=>0,8</div>
+            <div class=>0,9</div>
+            <div class=>0,10</div>
+            <div class=>0,11</div>
+        </div>
+        <!-- Column 2 -->
+        <div>
+            <div class =>1,0</div>
+            <div class ="wall">1,1</div>
+            <div class ="wall">1,2</div>
+            <div class ="wall">1,3</div>
+            <div class ="wall">1,4</div>
+            <div class ="wall">1,5</div>
+            <div class ="wall">1,6</div>
+            <div class ="wall">1,7</div>
+            <div class ="wall">1,8</div>
+            <div class =>1,9</div>
+            <div class ="wall">1,10</div>
+            <div class =>1,11</div>
+        </div>
+        <!-- Column 3 -->
+        <div>
+            <div class = "">2,0</div>
+            <div class = "">2,1</div>
+            <div class = "">2,2</div>
+            <div class = "wall">2,3</div>
+            <div class = "">2,4</div>
+            <div class = "">2,5</div>
+            <div class = "">2,6</div>
+            <div class = "wall">2,7</div>
+            <div class = "token">2,8</div>
+            <div class = "">2,9</div>
+            <div class = "wall">2,10</div>
+            <div class = "">2,11</div>
+        </div>
+        <!-- Column 4 -->
+        <div>
+            <div class = "">3,0</div>
+            <div class = "wall">3,1</div>
+            <div class = "">3,2</div>
+            <div class = "wall">3,3</div>
+            <div class = "">3,4</div>
+            <div class = "wall">3,5</div>
+            <div class = "">3,6</div>
+            <div class = "wall">3,7</div>
+            <div class = "wall">3,8</div>
+            <div class = "wall">3,9</div>
+            <div class = "wall">3,10</div>
+            <div class = "token">3,11</div>
+        </div>
+        <!-- Column 5 -->
+        <div>
+            <div class = "">4,0</div>
+            <div class = "wall">4,1</div>
+            <div class = "">4,2</div>
+            <div class = "">4,3</div>
+            <div class = "">4,4</div>
+            <div class = "wall">4,5</div>
+            <div class = "">4,6</div>
+            <div class = "">4,7</div>
+            <div class = "">4,8</div>
+            <div class = "">4,9</div>
+            <div class = "wall">4,10</div>
+            <div class = "wall">4,11</div>
+        </div> 
+        <!-- Column 6 -->
+        <div>
+            <div class = "wall">5,0</div>
+            <div class = "wall">5,1</div>
+            <div class = "wall">5,2</div>
+            <div class = "wall">5,3</div>
+            <div class = "">5,4</div>
+            <div class = "wall">5,5</div>
+            <div class = "wall">5,6</div>
+            <div class = "">5,7</div>
+            <div class = "wall">5,8</div>
+            <div class = "">5,9</div>
+            <div class = "">5,10</div>
+            <div class = "token">5,11</div>
+        </div>    
+        <!-- Column 7 -->
+        <div>
+            <div class = "">6,0</div>
+            <div class = "">6,1</div>
+            <div class = "">6,2</div>
+            <div class = "">6,3</div>
+            <div class = "">6,4</div>
+            <div class = "">6,5</div>
+            <div class = "wall">6,6</div>
+            <div class = "">6,7</div>
+            <div class = "wall">6,8</div>
+            <div class = "">6,9</div>
+            <div class = "wall">6,10</div>
+            <div class = "wall">6,11</div>
+        </div>
+        <!-- Column 8 -->
+        <div>
+            <div class = "">7,0</div>
+            <div class = "wall">7,1</div>
+            <div class = "wall">7,2</div>
+            <div class = "wall">7,3</div>
+            <div class = "">7,4</div>
+            <div class = "">7,5</div>
+            <div class = "">7,6</div>
+            <div class = "">7,7</div>
+            <div class = "wall">7,8</div>
+            <div class = "">7,9</div>
+            <div class = "">7,10</div>
+            <div class = "">7,11</div>
+        </div>
+        <!-- Column 9 -->
+        <div>
+            <div class = "token">8,0</div>
+            <div class = "wall">8,1</div>
+            <div class = "">8,2</div>
+            <div class = "wall">8,3</div>
+            <div class = "">8,4</div>
+            <div class = "wall">8,5</div>
+            <div class = "wall">8,6</div>
+            <div class = "wall">8,7</div>
+            <div class = "wall">8,8</div>
+            <div class = "">8,9</div>
+            <div class = "wall">8,10</div>
+            <div class = "">8,11</div>
+        </div> 
+        <!-- Column 10 -->
+        <div>
+            <div class = "wall">9,0</div>
+            <div class = "wall">9,1</div>
+            <div class = "">9,2</div>
+            <div class = "">9,3</div>
+            <div class = "">9,4</div>
+            <div class = "wall">9,5</div>
+            <div class = "token">9,6</div>
+            <div class = "">9,7</div>
+            <div class = "">9,8</div>
+            <div class = "">9,9</div>
+            <div class = "wall">9,10</div>
+            <div class = "">9,11</div>
+        </div>
+        <!-- Column 11 -->
+        <div>
+            <div class = "">10,0</div>
+            <div class = "">10,1</div>
+            <div class = "">10,2</div>
+            <div class = "wall">10,3</div>
+            <div class = "">10,4</div>
+            <div class = "wall">10,5</div>
+            <div class = "wall">10,6</div>
+            <div class = "wall">10,7</div>
+            <div class = "wall">10,8</div>
+            <div class = "wall">10,9</div>
+            <div class = "wall">10,10</div>
+            <div class = "">10,11</div>
+        </div>
+        <!-- Column 12 -->
+        <div>
+            <div class = "token">11,0</div>
+            <div class = "wall">11,1</div>
+            <div class = "wall">11,2</div>
+            <div class = "wall">11,3</div>
+            <div class = "">11,4</div>
+            <div class = "">11,5</div>
+            <div class = "">11,6</div>
+            <div class = "">11,7</div>
+            <div class = "">11,8</div>
+            <div class = "door">11,9</div>
+            <div class = "wall">11,10</div>
+            <div class = "token">11,11</div>
+        </div>         
+    </div>
+
+<script>
+
+</script>
+</body>
+</html>

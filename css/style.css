@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    }
+
+    body{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    }
+
+    #gameBoard{
+    border: solid black 1px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 492px;
+    width: 492px;
+    }
+
+    .square{
+        border-right: 1px black dotted;
+        border-top: 1px black dotted;
+        height: 40px;
+        width: 40px;
+    }
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+
+   * {
+    margin: 0;
+    }
+
+    body{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    }
+
+    #parent{
+    border: solid black 1px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 492px;
+    width: 492px;
+    }
+
+    .square{
+        border-right: 1px black dotted;
+        border-top: 1px black dotted;
+        height: 40px;
+        width: 40px;
+    }
+</style>
+    
+</head>
+<body>
+    <div id="parent"></div>
+    <script>
+    function createDivs() {
+    const parentDiv = document.getElementById('parent');
+    
+    for ( let i = 0; i <= 143; i += 1){
+        let squareDiv = document.createElement('div');
+        squareDiv.className = "square";
+        parentDiv.appendChild(squareDiv);
+        }
+    }
+    createDivs();
+    
+    function wall (){
+    const gameBoxes = document.querySelectorAll('.square');
+    gameBoxes[5].style.backgroundColor = "black";
+    gameBoxes[7].style.backgroundColor = "black";
+    gameBoxes[13].style.backgroundColor = "black";
+    gameBoxes[15].style.backgroundColor = "black";
+    gameBoxes[16].style.backgroundColor = "black";
+    gameBoxes[17].style.backgroundColor = "black";
+    gameBoxes[19].style.backgroundColor = "black";
+    gameBoxes[20].style.backgroundColor = "black";
+    gameBoxes[21].style.backgroundColor = "black";
+    gameBoxes[23].style.backgroundColor = "black";
+    gameBoxes[25].style.backgroundColor = "black";
+    gameBoxes[29].style.backgroundColor = "black";
+    gameBoxes[31].style.backgroundColor = "black";
+    gameBoxes[35].style.backgroundColor = "black";
+    gameBoxes[37].style.backgroundColor = "black";
+    gameBoxes[38].style.backgroundColor = "black";
+    gameBoxes[39].style.backgroundColor = "black";
+    gameBoxes[41].style.backgroundColor = "black";
+    gameBoxes[43].style.backgroundColor = "black";
+    gameBoxes[44].style.backgroundColor = "black";
+    gameBoxes[46].style.backgroundColor = "black";
+    gameBoxes[47].style.backgroundColor = "black";
+    gameBoxes[49].style.backgroundColor = "black";
+    gameBoxes[61].style.backgroundColor = "black";
+    gameBoxes[63].style.backgroundColor = "black";
+    gameBoxes[64].style.backgroundColor = "black";
+    gameBoxes[65].style.backgroundColor = "black";
+    gameBoxes[68].style.backgroundColor = "black";
+    gameBoxes[69].style.backgroundColor = "black";
+    gameBoxes[70].style.backgroundColor = "black";
+    gameBoxes[73].style.backgroundColor = "black";
+    gameBoxes[77].style.backgroundColor = "black";
+    gameBoxes[78].style.backgroundColor = "black";
+    gameBoxes[80].style.backgroundColor = "black";
+    gameBoxes[82].style.backgroundColor = "black";
+    gameBoxes[85].style.backgroundColor = "black";
+    gameBoxes[86].style.backgroundColor = "black";
+    gameBoxes[87].style.backgroundColor = "black";
+    gameBoxes[92].style.backgroundColor = "black";
+    gameBoxes[94].style.backgroundColor = "black";
+    gameBoxes[97].style.backgroundColor = "black";
+    gameBoxes[99].style.backgroundColor = "black";
+    gameBoxes[101].style.backgroundColor = "black";
+    gameBoxes[102].style.backgroundColor = "black";
+    gameBoxes[103].style.backgroundColor = "black";
+    gameBoxes[104].style.backgroundColor = "black";
+    gameBoxes[106].style.backgroundColor = "black";
+    gameBoxes[111].style.backgroundColor = "black";
+    gameBoxes[118].style.backgroundColor = "black";
+    gameBoxes[121].style.backgroundColor = "black";
+    gameBoxes[123].style.backgroundColor = "black";
+    gameBoxes[124].style.backgroundColor = "black";
+    gameBoxes[125].style.backgroundColor = "black";
+    gameBoxes[127].style.backgroundColor = "black";
+    gameBoxes[129].style.backgroundColor = "black";
+    gameBoxes[130].style.backgroundColor = "black";
+    gameBoxes[131].style.backgroundColor = "black";
+    gameBoxes[122].style.backgroundColor = "black";
+    gameBoxes[137].style.backgroundColor = "black";
+    gameBoxes[139].style.backgroundColor = "black";
+}
+
+wall();
+
+
+
+    </script>
+</body>
+</html>
