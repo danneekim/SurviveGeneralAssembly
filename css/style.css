@@ -1,27 +1,56 @@
 * {
     margin: 0;
-    }
+}
 
-    body{
+body{
     display: flex;
     justify-content: center;
     padding-top: 50px;
-    }
+}
 
-    #gameBoard{
+#gameBoard{
     border: solid black 1px;
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     height: 492px;
     width: 492px;
-    }
+    position: relative;
+}
 
-    .square{
-        border-right: 1px black dotted;
-        border-top: 1px black dotted;
-        height: 40px;
-        width: 40px;
-    }
+.square{
+    border-right: 1px black dotted;
+    border-top: 1px black dotted;
+    height: 40px;
+    width: 40px;
+}
+
+#GAdude {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+/*  */
+.wall {
+    background-color: black;
+    background-image: url(../Brick_Background.png);    
+    background-size: contain;
+}
+
+.path{
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.token{
+    /* /* background-color: green; */
+}
+
+.door{
+    background-color: orange;
+}
+
+.token{
+    background-color: rgba(0, 255, 0, 0.3);
+
 
 
 
