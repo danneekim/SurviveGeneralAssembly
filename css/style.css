@@ -2,10 +2,23 @@
     margin: 0;
 }
 
-body{
+#boardwrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px black;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    margin-top: 25px;
+}
+
+#bgimage{
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    background-image: url(../img/gaLogo.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #gameBoard{
@@ -29,31 +42,64 @@ body{
     width: 40px;
     position: absolute;
 }
-/*  */
+
 .wall {
     background-color: black;
-    background-image: url(../Brick_Background.png);    
-    background-size: contain;
+    background-image: url(../img/Brick_Background.png);    
+    background-size: cover;
 }
 
-.path{
-    background-color: rgba(0, 0, 0, .4);
-}
-
-.token{
-    /* /* background-color: green; */
+.path {
+    background-color: rgba(0, 0, 0, .45);
 }
 
 .door{
-    background-color: orange;
+    background-color: red;
+}
+
+@keyframes flashing {
+    0%{
+        background-color: red;
+    }
+    50%{
+        background-color: green;
+    }
+    100%{
+        background-color: blue;
+    }
 }
 
 .token{
     background-color: rgba(0, 255, 0, 0.3);
+}
 
+#inventwrapper{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
 
+h2{
+    padding-top: 2vh;
 
+}
 
+#tokenInventory {
+    height: 50px;
+    width: 364px;
+    border: solid 3px black;
+    font-size: 25pt;
+    background-color: white;
+}
 
-
-
+#inventborder {
+    border: solid black 1px;
+    margin-top: 10vh;
+    margin-bottom: 60vh;
+    margin-left: 50px;
+    background-color: rgba(87,65,47,0.8);
+}

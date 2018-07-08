@@ -149,15 +149,6 @@ const isThereToken = (x,y) => {
     return false;
 };
 
-// Remove Token @ given coordinate:
-const removeToken = (x,y) => {
-    for (let k = 0; k < tokens.length; k++){
-        const token = token[i];
-        if (token.x === x && token.y === y){
-            token.splice(k, 1);
-        }
-    }
-}
 
 // This is layout of maze
 const gridLayout = (x,y) => {
@@ -169,29 +160,104 @@ const gridLayout = (x,y) => {
 
 // Check if spot is able to move there
 const canMoveTo = (x,y) => {
-    console.log (x, y);
     if (!gridLayout(x,y)){
-        console.log('gridlayouworks');
+        // console.log('gridlayouworks');
         return false;
     }
     if (isThereAWall(x,y)){
-        console.log('istherewallworks');
+        // console.log('istherewallworks');
         return false;
     }
     return true;
 }
+
+// This array will hold the images on the board
+let boardImgArray = [];
+
+
+
 
 // Move character around grid by px of 41x41;
 const movingCharacter = (x, y) => {
     const student = document.querySelector('#GAdude');
     student.style.top = (y * 41).toString() + 'px';
     student.style.left = (x * 41).toString() + 'px';
-    if (isThereToken(x, y)) {
-      removeToken(x, y);
-      renderToken();
+// If you're on the grid AND there is a token AND specifically at these X AND Y coordinates:
+// STYLE this specific img like this: 
+    if (canMoveTo (x,y) === isThereToken(x,y) && x === 8 && y === 0) {
+        boardImgArray.pop();
+        const inventory = document.getElementById('tokenInventory');
+        tok1img.style.display = "inline-block";
+        tok1img.style.height = "50px";
+        tok1img.style.width = "50px";
+        tok1img.style.margin = "0 auto";
+        inventory.appendChild(tok1img);
+    } 
+    else if (canMoveTo(x,y) === isThereToken(x, y) && x === 11 && y === 0) {
+        boardImgArray.pop();
+        const inventory = document.getElementById('tokenInventory');
+        tok2img.style.display = "inline-block";
+        tok2img.style.height = "50px";
+        tok2img.style.width = "50px";
+        tok2img.style.margin = "0 auto";
+        inventory.appendChild(tok2img);
     }
-    if (tokens.length === 0) {
-    //   displayWinMessage();
+    else if (canMoveTo(x,y) === isThereToken(x,y) && x === 9 && y === 6){
+        boardImgArray.pop();
+        tok3img.style.display = "none";
+        const inventory = document.getElementById('tokenInventory');
+        tok3img.style.display = "inline-block";
+        tok3img.style.height = "50px";
+        tok3img.style.width = "50px";
+        tok3img.style.margin = "0 auto";
+        inventory.appendChild(tok3img);
+    }
+    else if (canMoveTo(x,y) === isThereToken(x,y) && x === 2 && y === 8){
+        boardImgArray.pop();
+        const inventory = document.getElementById('tokenInventory');
+        tok4img.style.display = "inline-block";
+        tok4img.style.height = "50px";
+        tok4img.style.width = "50px";
+        tok4img.style.margin = "0 auto";
+        inventory.appendChild(tok4img);
+    }
+    else if (canMoveTo(x,y) === isThereToken(x,y) && x === 3 && y === 11){
+        boardImgArray.pop();
+        const inventory = document.getElementById('tokenInventory');
+        tok5img.style.display = "inline-block";
+        tok5img.style.height = "50px";
+        tok5img.style.width = "50px";
+        tok5img.style.margin = "0 auto";
+        inventory.appendChild(tok5img);
+
+    }
+    else if (canMoveTo(x,y) === isThereToken(x,y) && x === 5 && y === 11){
+        boardImgArray.pop();
+        const inventory = document.getElementById('tokenInventory');
+        tok6img.style.display = "inline-block";
+        tok6img.style.height = "50px";
+        tok6img.style.width = "50px";
+        tok6img.style.margin = "0 auto";
+        inventory.appendChild(tok6img);
+    }
+    else if (canMoveTo(x,y) === isThereToken(x,y) && x === 11 && y === 11){
+        boardImgArray.pop();
+        const inventory = document.getElementById('tokenInventory');
+        tok7img.style.display = "inline-block";
+        tok7img.style.height = "50px";
+        tok7img.style.width = "50px";
+        tok7img.style.margin = "0 auto";
+        inventory.appendChild(tok7img);
+    } 
+    else if((boardImgArray.length !== 0) && (x === 11 & y ===9)){
+        alert('you need to collect ALL the tokens!');
+    }
+    else if ((boardImgArray.length === 0) && (x === 11 && y === 9)) {
+        alert('Onward to UNIT 2!');
+    }
+    else if (boardImgArray.length === 0){
+        const gameSquares = document.querySelectorAll('.square');
+        gameSquares[119].style.animation = "flashing 3s infinite";
     }
   };
 
@@ -207,7 +273,6 @@ const moveLeft = () => {
   const moveRight = () => {
     if (canMoveTo(student.x + 1, student.y)) {
         student.x += 1; 
-        console.log(student.x);
       movingCharacter(student.x, student.y);
     }
   }
@@ -235,6 +300,7 @@ const moveLeft = () => {
     // prevent the browser default of scrolling the page.
     if ([37, 38, 39, 40].includes(keyCode)) {
       evt.preventDefault();
+
     }
     // Attempt to move the character in the direction 
     switch (keyCode) {
@@ -253,10 +319,13 @@ const moveLeft = () => {
     }
   });
 
+
+
+
 // Create Token1 for position Token[0]:
 const toktok = document.querySelectorAll(".token");
 const tok1img = document.createElement('img');
-tok1img.src = "./html5.png";
+tok1img.src = "./img/html5.png";
 tok1img.style.height = "70%";
 tok1img.style.width = "70%";
 tok1img.style.marginLeft = "13%";
@@ -264,12 +333,13 @@ tok1img.style.marginTop = "13%";
 tok1img.style.borderRadius = "20%";
 tok1img.style.border = "1px solid black";
 tok1img.style.backgroundColor = "rgba(0,255,0,0.4)"
+boardImgArray.push(tok1img)
 let tok1 = toktok[0];
 tok1.appendChild(tok1img);
 
 // Create Token2 for position Token[1]:
 const tok2img = document.createElement('img');
-tok2img.src = "./css3.png";
+tok2img.src = "./img/css3.png";
 tok2img.style.height = "70%";
 tok2img.style.width = "70%";
 tok2img.style.marginLeft = "13%";
@@ -277,12 +347,13 @@ tok2img.style.marginTop = "13%";
 tok2img.style.borderRadius = "20%";
 tok2img.style.border = "1px solid black";
 tok2img.style.backgroundColor = "rgba(0,255,0,0.4)";
+boardImgArray.push(tok2img);
 let tok2 = toktok[1];
 tok2.appendChild(tok2img);
 
 // Create Token3 for position Token[2]:
 const tok3img = document.createElement('img');
-tok3img.src = "./dom.png";
+tok3img.src = "./img/dom.png";
 tok3img.style.height = "70%";
 tok3img.style.width = "70%";
 tok3img.style.marginLeft = "13%";
@@ -290,12 +361,13 @@ tok3img.style.marginTop = "13%";
 tok3img.style.borderRadius = "20%";
 tok3img.style.border = "1px solid black";
 tok3img.style.backgroundColor = "rgba(0,255,0,0.4)";
+boardImgArray.push(tok3img);
 let tok3 = toktok[2];
 tok3.appendChild(tok3img);
 
 // Create Token4 for position Token[3]:
 const tok4img = document.createElement('img');
-tok4img.src = "./JS.png";
+tok4img.src = "./img/JS.png";
 tok4img.style.height = "70%";
 tok4img.style.width = "70%";
 tok4img.style.marginLeft = "13%";
@@ -303,12 +375,13 @@ tok4img.style.marginTop = "13%";
 tok4img.style.borderRadius = "20%";
 tok4img.style.border = "1px solid black";
 tok4img.style.backgroundColor = "rgba(0,255,0,0.4)";
+boardImgArray.push(tok4img);
 let tok4 = toktok[3];
 tok4.appendChild(tok4img);
 
 // Create Token5 for position Token[4]:
 const tok5img = document.createElement('img');
-tok5img.src = "./coffee.png";
+tok5img.src = "./img/coffee.png";
 tok5img.style.height = "70%";
 tok5img.style.width = "70%";
 tok5img.style.marginLeft = "13%";
@@ -316,12 +389,13 @@ tok5img.style.marginTop = "13%";
 tok5img.style.borderRadius = "20%";
 tok5img.style.border = "1px solid black";
 tok5img.style.backgroundColor = "rgba(0,255,0,0.4)";
+boardImgArray.push(tok5img);
 let tok5 = toktok[4];
 tok5.appendChild(tok5img);
 
 // Create Token 6 for position Token[5]:
 const tok6img = document.createElement('img');
-tok6img.src = "./github.png";
+tok6img.src = "./img/github.png";
 tok6img.style.height = "70%";
 tok6img.style.width = "70%";
 tok6img.style.marginLeft = "13%";
@@ -329,12 +403,13 @@ tok6img.style.marginTop = "13%";
 tok6img.style.borderRadius = "20%";
 tok6img.style.border = "1px solid black";
 tok6img.style.backgroundColor = "rgba(0,255,0,0.4)";
+boardImgArray.push(tok6img);
 let tok6 = toktok[5];
 tok6.appendChild(tok6img);
 
 // Create Token 7 for position Token[6]:
 const tok7img = document.createElement('img');
-tok7img.src = "./terminal.png";
+tok7img.src = "./img/terminal.png";
 tok7img.style.height = "70%";
 tok7img.style.width = "70%";
 tok7img.style.marginLeft = "13%";
@@ -342,12 +417,14 @@ tok7img.style.marginTop = "13%";
 tok7img.style.borderRadius = "20%";
 tok7img.style.border = "1px solid black";
 tok7img.style.backgroundColor = "rgba(0,255,0,0.4)";
+boardImgArray.push(tok7img);
 let tok7 = toktok[6];
 tok7.appendChild(tok7img);
 
 // Create Portal for door[0]
 const doorimg = document.createElement('img');
-doorimg.src = "./fatarrowportal.png";
+doorimg.src = "./img/fatarrowportal.png";
+doorimg.style.display = "none";
 doorimg.style.height = "70%";
 doorimg.style.width = "70%";
 doorimg.style.marginLeft = "13%";
@@ -356,5 +433,15 @@ doorimg.style.borderRadius = "20%";
 doorimg.style.border = "1px solid black";
 doorimg.style.backgroundColor = "rgba(0,255,0,0.4)";
 let portal = document.querySelector(".door");
+portal.style.textAlign = "center";
 portal.appendChild(doorimg);
+
+// hard code it so tht when it lands on this certain token - display none.
+// if all the tokens display nonethen
+// allow player to move on
+
+// when a player steps on a block with the img
+// add it to my inventory array that will display on the side of the scrren
+// and once the array had all the conditions full move onto the next map.
+
 
