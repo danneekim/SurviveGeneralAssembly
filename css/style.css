@@ -2,27 +2,54 @@
     margin: 0;
 }
 
+h1{
+    font-family: 'Marcellus', serif;
+    font-size: 30pt;
+}
+
+h2{
+    font-family: 'Marcellus', serif;
+}
+
+body{
+    background-image: url(../img/dungeonbg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#galogo{
+    height: 100px;
+    width: 200px;
+    border: solid black 2px;
+    margin-top: 5px;
+}
+
+#unitheading{
+    font-size: 18pt;
+    padding-top: 5px;
+    text-align: center;
+    font-family: 'Marcellus', serif;
+}
+
 #boardwrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 1px black;
+    border: solid 4px black;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 30px;
     margin-top: 25px;
+    background-color:  rgba(255, 255, 255, .45);
 }
 
 #bgimage{
     display: flex;
     justify-content: center;
-    background-image: url(../img/gaLogo.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 #gameBoard{
-    border: solid black 1px;
+    border: solid black 4px;
     display: inline-flex;
     flex-wrap: wrap;
     height: 492px;
@@ -50,30 +77,37 @@
 }
 
 .path {
-    background-color: rgba(0, 0, 0, .45);
+    background-color: rgba(0, 0, 0, .25);
 }
 
 .door{
     background-color: red;
 }
 
+.token{
+    background-color: rgba(0, 0, 0, .25);
+}
+
 @keyframes flashing {
     0%{
-        background-color: red;
+        background-color: lightgreen;
+    }
+    25%{
+        background-color: green;
     }
     50%{
+        background-color: lightgreen;
+    }
+    75%{
         background-color: green;
     }
     100%{
-        background-color: blue;
+        background-color: lightgreen;
     }
 }
 
-.token{
-    background-color: rgba(0, 255, 0, 0.3);
-}
-
 #inventwrapper{
+    border: solid black 4px;
     display: flex;  
     justify-content: center;
     align-items: center;
@@ -81,25 +115,34 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 15px;
-}
-
-h2{
-    padding-top: 2vh;
-
+    margin-left: 20px;
+    margin-top: 90px;
+    background-color:  rgba(255, 255, 255, .45);
+    border-radius: 15%;
 }
 
 #tokenInventory {
     height: 50px;
     width: 364px;
-    border: solid 3px black;
+    border: solid 5px black;
     font-size: 25pt;
     background-color: white;
+    border-radius: 3%;
 }
 
-#inventborder {
-    border: solid black 1px;
-    margin-top: 10vh;
-    margin-bottom: 60vh;
-    margin-left: 50px;
-    background-color: rgba(87,65,47,0.8);
+#displaymessage{
+    border: solid black 4px;
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 300px;
+    background-color:  rgba(255, 255, 255, .45);
+    border-radius: 35%;
+    font-family: 'Marcellus', serif;
+    font-size: 24pt;
+    display: none;
+}
+
+#displaymessage p{
+    text-align: center;
+    padding-top: 100px;
 }

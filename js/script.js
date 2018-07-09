@@ -149,7 +149,6 @@ const isThereToken = (x,y) => {
     return false;
 };
 
-
 // This is layout of maze
 const gridLayout = (x,y) => {
     if ( x < 0 || y < 0 || x > 11 || y > 11){
@@ -173,9 +172,6 @@ const canMoveTo = (x,y) => {
 
 // This array will hold the images on the board
 let boardImgArray = [];
-
-
-
 
 // Move character around grid by px of 41x41;
 const movingCharacter = (x, y) => {
@@ -249,17 +245,24 @@ const movingCharacter = (x, y) => {
         tok7img.style.margin = "0 auto";
         inventory.appendChild(tok7img);
     } 
-    else if((boardImgArray.length !== 0) && (x === 11 & y ===9)){
-        alert('you need to collect ALL the tokens!');
+    else if((boardImgArray.length !== 0) && (x === 11 && y ===9)){
+        let collectmessage = document.getElementById('unitheading');
+        collectmessage.innerHTML = "GO STUDY MORE, COLLECT MO TOKENS";
+        collectmessage.style.color = "red";
     }
+    // functionality for winning
     else if ((boardImgArray.length === 0) && (x === 11 && y === 9)) {
-        alert('Onward to UNIT 2!');
+        let display = document.querySelector('#displaymessage');
+        display.style.display = "block";
+        display.style.animation = "flashing 3s infinite";
     }
     else if (boardImgArray.length === 0){
         const gameSquares = document.querySelectorAll('.square');
         gameSquares[119].style.animation = "flashing 3s infinite";
     }
   };
+
+
 
     // Move the character left one tile, if possible.
 const moveLeft = () => {
@@ -318,9 +321,6 @@ const moveLeft = () => {
         break;
     }
   });
-
-
-
 
 // Create Token1 for position Token[0]:
 const toktok = document.querySelectorAll(".token");
@@ -435,13 +435,4 @@ doorimg.style.backgroundColor = "rgba(0,255,0,0.4)";
 let portal = document.querySelector(".door");
 portal.style.textAlign = "center";
 portal.appendChild(doorimg);
-
-// hard code it so tht when it lands on this certain token - display none.
-// if all the tokens display nonethen
-// allow player to move on
-
-// when a player steps on a block with the img
-// add it to my inventory array that will display on the side of the scrren
-// and once the array had all the conditions full move onto the next map.
-
 
