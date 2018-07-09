@@ -156,14 +156,14 @@ if (canMoveTo (x,y) === isThereToken(x,y) && x === 8 && y === 0) {
 My movingCharacter function that checks for ALOT of things.
 In hindsight, I wish I hadn't writen all my functionality into one gigantic function but where it stands now I'm not certain to how it could seperate into multiple functions.
 
-  1 - It allows the character to move 41px up and down the X & Y axis.
-  2 - It checks if there is a token at that specified location to be collected:
-      - If true - then pops "a token element" out of boardImgArray[];
-      - Then styles the specified token and appends it to the inventory
-  3 - It checks for win/loss:
-    - If all the tokens are not collected (which is checked using the length of the boardImgArray)
-    - If the boardImgArray is not 0 (because it would be 0 if all tokens were collected and "popped out") then displays message.
-    - If the boardImgArray is 0 (and all tokens have been "popped out" and collected) then the portal square changes color and after      moving to specified location of portal will display message that you to move onto the next unit.
+1. It allows the character to move 41px up and down the X & Y axis.
+1. It checks if there is a token at that specified location to be collected:
+    * If true - then pops "a token element" out of boardImgArray[];
+    * Then styles the specified token and appends it to the inventory
+1. It checks for win/loss:
+    * If all the tokens are not collected (which is checked using the length of the boardImgArray)
+    * If the boardImgArray is not 0 (because it would be 0 if all tokens were collected and "popped out") then displays message.
+    * If the boardImgArray is 0 (and all tokens have been "popped out" and collected) then the portal square changes color and after      moving to specified location of portal will display message that you to move onto the next unit.
 
 
 
