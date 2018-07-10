@@ -1,4 +1,3 @@
-let gameboard = document.querySelector('#gameBoard');
 // Layout of board map
 const gameMaplvl1 = [
     [0,0,0,0,0,1,0,0,2,1,0,2],
@@ -14,6 +13,7 @@ const gameMaplvl1 = [
     [0,1,1,1,1,0,1,0,1,1,1,1],
     [0,0,0,2,1,2,1,0,0,0,0,2]
 ]; 
+
 // index code for each map object
 let gameIndexCode = {
     0: 'path',
@@ -24,6 +24,7 @@ let gameIndexCode = {
 
 // Creates grid for game map
 // Uses gameIndexCode to translate the # classes to string values
+let gameboard = document.querySelector('#gameBoard');
 function createGameLevel() { 
     for ( let i = 0; i < gameMaplvl1.length; i++){
         for ( let j = 0; j < gameMaplvl1[i].length; j++) {
@@ -264,7 +265,7 @@ const movingCharacter = (x, y) => {
 
 
 
-    // Move the character left one tile, if possible.
+// Move the character left one tile, if possible.
 const moveLeft = () => {
     if (canMoveTo(student.x - 1, student.y)) {
       student.x -= 1;
@@ -272,7 +273,7 @@ const moveLeft = () => {
     }
   }
   
-  // Move the character right one tile, if possible.
+// Move the character right one tile, if possible.
   const moveRight = () => {
     if (canMoveTo(student.x + 1, student.y)) {
         student.x += 1; 
@@ -280,7 +281,7 @@ const moveLeft = () => {
     }
   }
   
-  // Move the character up one tile, if possible.
+// Move the character up one tile, if possible.
   const moveUp = () => {
     if (canMoveTo(student.x, student.y - 1)) {
         student.y -= 1;
@@ -288,7 +289,7 @@ const moveLeft = () => {
     }
   };
   
-  // Move the character down one tile, if possible.
+// Move the character down one tile, if possible.
   const moveDown = () => {
     if (canMoveTo(student.x, student.y + 1)) {
       student.y += 1;
@@ -303,7 +304,6 @@ const moveLeft = () => {
     // prevent the browser default of scrolling the page.
     if ([37, 38, 39, 40].includes(keyCode)) {
       evt.preventDefault();
-
     }
     // Attempt to move the character in the direction 
     switch (keyCode) {
