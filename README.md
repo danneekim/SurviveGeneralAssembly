@@ -2,6 +2,7 @@
 - Is a simple dungeon maze game, where the dungeon is depicted as General Assembly.
 - The individual maps of the dungeon are the different units covered throughout the WDI course.
 - The tokens that need to be collected before advancing to the next stage - are relevant topics covered in that specific unit.
+- User navigates the mazes using the arrows keys to collect the tokens.
 
 # Technical Discussion:
 
